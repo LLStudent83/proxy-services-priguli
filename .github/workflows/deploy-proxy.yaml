@@ -33,7 +33,7 @@ jobs:
           script: |
             cd ~/projects/balls_deploy/proxy
             # Pull compose из proxy-repo (адаптируй URL)
-            curl -o docker-compose-proxy.yaml https://raw.githubusercontent.com/llstudent83/proxy-services-priguli/master/docker-compose-proxy.yaml
+            curl -o docker-compose.yaml https://raw.githubusercontent.com/llstudent83/proxy-services-priguli/master/docker-compose.yaml
             echo "${{ secrets.GHRC_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
             docker compose down || true
             docker compose pull
