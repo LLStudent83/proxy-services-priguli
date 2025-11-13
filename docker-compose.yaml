@@ -5,12 +5,12 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /etc/letsencrypt:/etc/letsencrypt:ro  # Certs с хоста
-      - /var/www/certbot:/var/www/certbot  # Для certbot
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot
     networks:
       - priguli-apps  # Подключение к внешней сети
     restart: unless-stopped
 
 networks:
   priguli-apps:
-    external: true  # Сеть уже создана вручную
+    external: true
